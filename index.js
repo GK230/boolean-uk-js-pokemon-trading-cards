@@ -26,15 +26,15 @@ function createCard(title, image, cardText) {
 
     for (i = 0; i < 6; i++) { 
         let line = document.createElement("p")
-        line.innerText = `${}`
+        line.innerText = cardText[i].stat.name.toUpperCase() + ": " + cardText[i]["base_stat"]
         cardTextEl.append(line)
     }
 
     document.querySelector("section").append(cardEl)
 }
 
+
 for (pokemon of data) {
-    console.log(pokemon.stats)
     createCard(pokemon.name, pokemon.sprites.other["official-artwork"].front_default, pokemon.stats)
 }
 
